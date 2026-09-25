@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE Research Paper</title>
+    <link rel="stylesheet" href="IEEE.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <div class="title">
+            Quantum Computing Applications in Cryptography and Post-Quantum Security
+        </div>
+
+        <div class="authors">
+            <span class="author-name">Zubair Ahmed<sup>1</sup></span>
+            <span class="author-name">Sara Farooq<sup>2</sup></span>
+            <span class="author-name">Bilal Raza<sup>1</sup></span>
+        </div>
+
+        <div class="affiliations">
+            <div class="affiliation">
+                <sup>1</sup> Department of Cybersecurity, National University of Sciences and Technology, Islamabad, Pakistan
+            </div>
+
+            <div class="affiliation">
+                <sup>2</sup> Faculty of Computing and Information Technology, University of the Punjab, Lahore, Pakistan
+            </div>
+        </div>
+    </header>
+
+
+    <section class="abstract-section">
+        <div class="abstract-title">Abstract</div>
+
+        <div class="abstract-text">
+            This paper presents a comprehensive study of quantum computing
+            applications applied to modern cryptographic architectures and security.
+            We investigate the performance characteristics of various post-quantum
+            algorithms including lattice-based encryption, code-based cryptography, and
+            multivariate public key schemes in high-throughput network environments.
+        </div>
+
+        <div class="keywords">
+            <strong>Keywords:</strong>
+            Quantum Computing, Post-Quantum Cryptography, Lattice Encryption,
+            Shor's Algorithm, Information Security
+        </div>
+    </section>
+
+
+    <main class="content">
+
+        <div class="column">
+
+            <section class="section">
+                <div class="section-title">
+                    <span class="section-number">I.</span> Introduction
+                </div>
+
+                <p class="section-text">
+                    The rapid advancement in quantum computing hardware and fault-tolerant
+                    qubit architecture has created unprecedented challenges in securing public
+                    key infrastructure and digital signatures [1].
+                    Traditional asymmetric cryptography approaches cannot survive the processing
+                    capabilities of large-scale quantum computers [2].
+                </p>
+
+                <p class="section-text">
+                    Post-quantum cryptography has emerged as a critical field for
+                    securing confidential data against future decryption capabilities.
+                    This paper addresses the challenge of implementing post-quantum
+                    cryptographic standards within strict network bandwidth constraints [3].
+                </p>
+            </section>
+
+
+            <section class="section">
+                <div class="section-title">
+                    <span class="section-number">II.</span> Literature Review
+                </div>
+
+                <p class="section-text">
+                    Recent advances in quantum security have focused on developing
+                    mathematical algorithms that remain intractable for quantum computers.
+                    Shor et al. [4] introduced polynomial-time quantum algorithms for
+                    factoring integers and solving discrete logarithms.
+                </p>
+
+                <p class="section-text">
+                    Lattice-based cryptographic frameworks such as CRYSTALS-Kyber and
+                    Dilithium have enabled robust defense against quantum attacks [5].
+                    However, key sizes and memory overhead in constrained hardware
+                    environments remain active research areas.
+                </p>
+            </section>
+
+
+            <section class="section">
+                <figure class="figure">
+                    <img
+                        src="Data pipeline with computing file preparation process stages outline diagram.jpg"
+                        alt="Figure 1"
+                        class="figure-img"
+                    >
+
+                    <figcaption class="figure-caption">
+                        Fig. 1. Overall system architecture showing quantum Key
+                        distribution pipeline and post-quantum encryption components
+                    </figcaption>
+                </figure>
+            </section>
+
+        </div>
+
+
+        <div class="column">
+
+            <section class="section">
+                <div class="section-title">
+                    <span class="section-number">III.</span> Methodology
+                </div>
+
+                <div class="subsection-title">
+                    A. Key Exchange Architecture
+                </div>
+
+                <p class="section-text">
+                    Our system implements a three-tier architecture consisting
+                    of key generation, encapsulation mechanism, and secure channel setup.
+                    Keys are generated across nodes and distributed across securely authenticated channels.
+                </p>
+
+                <div class="subsection-title">
+                    B. Adaptive Key Resynchronization
+                </div>
+
+                <p class="section-text">
+                    We implement a sliding window key exchange approach to balance throughput
+                    and session security. Session keys are refreshed periodically or when channel
+                    instability is detected.
+                </p>
+
+                <div class="subsection-title">
+                    C. Evaluation Metrics
+                </div>
+
+                <p class="section-text">
+                    Performance is measured across three dimensions: key generation latency,
+                    throughput overhead, and signature validation speed.
+                </p>
+            </section>
+
+
+            <section class="section">
+                <table class="table">
+
+                    <caption class="table-caption">
+                        TABLE I. Cryptographic Parameter Configuration
+                    </caption>
+
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Key Length (bits)</td>
+                            <td>3072</td>
+                        </tr>
+
+                        <tr>
+                            <td>Security Level</td>
+                            <td>NIST Level 3</td>
+                        </tr>
+
+                        <tr>
+                            <td>Lattice Dimension</td>
+                            <td>1024</td>
+                        </tr>
+
+                        <tr>
+                            <td>Active Qubits</td>
+                            <td>128</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </section>
+
+
+            <section class="section">
+                <div class="section-title">
+                    <span class="section-number">IV.</span> Results
+                </div>
+
+                <p class="section-text">
+                    Our experiments compared three approaches: legacy RSA-2048,
+                    standard lattice encryption, and optimized hybrid post-quantum key exchange.
+                    The hybrid approach achieved improved key generation speed while
+                    maintaining maximum quantum resistance.
+                </p>
+
+                <figure class="figure results-figure">
+                    <img
+                        src="Bandwidth Vs Latency_ How They Affect Your Online Experience.jpg"
+                        alt="Figure 2"
+                        class="figure-img"
+                    >
+
+                    <figcaption class="figure-caption">
+                        Fig. 2. Encryption latency and handshake throughput comparison across
+                        three cryptographic schemes
+                    </figcaption>
+                </figure>
+            </section>
+
+        </div>
+
+
+        <section class="section full-width">
+            <div class="section-title">
+                <span class="section-number">V.</span> Conclusion and Future Work
+            </div>
+
+            <p class="section-text">
+                This work demonstrates that post-quantum lattice-based strategies combined with
+                optimized key exchange architectures can effectively secure high-throughput networks.
+                Future work will explore quantum key distribution (QKD) integration for IoT hardware
+                and lightweight cryptographic primitives for embedded system security.
+            </p>
+        </section>
+
+
+        <section class="references-section">
+
+            <div class="section-title">
+                <span class="section-number">VI.</span> References
+            </div>
+
+            <ul class="reference-list">
+
+                <li>
+                    <span class="cite">[1]</span>
+                    P. W. Shor, "Algorithms for quantum computation: discrete logarithms and factoring,"
+                    in Proceedings 35th Annual Symposium on Foundations of Computer Science, 1994, pp. 124–134.
+                </li>
+
+                <li>
+                    <span class="cite">[2]</span>
+                    C. Gidney and M. Ekerå, "How to factor 2048 bit RSA integers in 8 hours using 20 million noisy qubits,"
+                    Quantum, vol. 5, p. 433, 2021.
+                </li>
+
+                <li>
+                    <span class="cite">[3]</span>
+                    E. Alkim, L. Ducas, T. Pöppelmann, and P. Schwabe, "Post-quantum key exchange—a new hope,"
+                    in 25th USENIX Security Symposium, 2016, pp. 327–343.
+                </li>
+
+                <li>
+                    <span class="cite">[4]</span>
+                    J. Hoffstein, J. Pipher, and J. H. Silverman, "NTRU: A ring-based public key cryptosystem,"
+                    in International Algorithmic Number Theory Symposium, 1998, pp. 267–288.
+                </li>
+
+                <li>
+                    <span class="cite">[5]</span>
+                    L. Chen et al., "Report on post-quantum cryptography," National Institute of Standards and Technology
+                    (NIST), NISTIR 8105, 2016.
+                </li>
+
+            </ul>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

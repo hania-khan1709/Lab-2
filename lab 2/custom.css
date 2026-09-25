@@ -1,0 +1,275 @@
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #05060a;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000000 100%);
+}
+
+/* ---------- STAR FIELD ----------
+   Trick: one empty div, given hundreds of tiny box-shadows.
+   Each "10vw 20vh 2px 1px white" is: x-offset, y-offset, blur, spread, color.
+   Using vw/vh keeps the stars positioned relative to screen size. */
+.stars, .stars2, .stars3 {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.stars {
+  box-shadow:
+    10vw 20vh 2px 1px white, 25vw 60vh 1px 1px white, 40vw 15vh 2px 1px white,
+    55vw 80vh 1px 1px white, 70vw 35vh 2px 1px white, 85vw 65vh 1px 1px white,
+    5vw 90vh 1px 1px white, 95vw 10vh 2px 1px white, 30vw 45vh 1px 1px white,
+    60vw 55vh 2px 1px white, 15vw 75vh 1px 1px white, 45vw 5vh 1px 1px white,
+    80vw 85vh 2px 1px white, 20vw 30vh 1px 1px white, 65vw 95vh 1px 1px white;
+  animation: twinkle 3s infinite ease-in-out alternate;
+}
+
+.stars2 {
+  box-shadow:
+    12vw 12vh 1px 1px white, 33vw 70vh 1px 1px white, 48vw 25vh 1px 1px white,
+    62vw 88vh 1px 1px white, 78vw 45vh 1px 1px white, 90vw 20vh 1px 1px white,
+    8vw 55vh 1px 1px white, 38vw 92vh 1px 1px white, 68vw 8vh 1px 1px white,
+    22vw 65vh 1px 1px white;
+  animation: twinkle 4s infinite ease-in-out alternate-reverse;
+}
+
+.stars3 {
+  box-shadow:
+    5vw 40vh 1px 1px #a0d8ff, 42vw 60vh 1px 1px #a0d8ff, 75vw 25vh 1px 1px #a0d8ff,
+    88vw 75vh 1px 1px #a0d8ff, 18vw 85vh 1px 1px #a0d8ff, 55vw 10vh 1px 1px #a0d8ff;
+  animation: twinkle 2.5s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to   { opacity: 1; }
+}
+
+/* ---------- PLANETS ---------- */
+.planet {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.planet-1 {
+  width: 90px; height: 90px;
+  top: 15%; left: 10%;
+  background: radial-gradient(circle at 30% 30%, #ff9966, #cc3300);
+  box-shadow: 0 0 40px 10px rgba(255, 100, 50, 0.5);
+  animation: float 6s ease-in-out infinite;
+}
+
+.planet-2 {
+  width: 50px; height: 50px;
+  top: 65%; left: 80%;
+  background: radial-gradient(circle at 30% 30%, #a1c4fd, #3a5aef);
+  box-shadow: 0 0 30px 8px rgba(90, 130, 255, 0.5);
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.planet-3 {
+  width: 30px; height: 30px;
+  top: 75%; left: 15%;
+  background: radial-gradient(circle at 30% 30%, #f6d365, #c48a00);
+  box-shadow: 0 0 20px 6px rgba(255, 200, 80, 0.5);
+  animation: float 5s ease-in-out infinite;
+}
+
+.ring-planet {
+  width: 70px; height: 70px;
+  top: 20%; right: 12%;
+  background: radial-gradient(circle at 30% 30%, #e0c3fc, #8e44ad);
+  box-shadow: 0 0 35px 10px rgba(180, 100, 255, 0.5);
+  animation: float 7s ease-in-out infinite;
+}
+.ring-planet::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 130px; height: 20px;
+  border: 3px solid rgba(224, 195, 252, 0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-20px); }
+}
+
+/* ---------- HERO CONTENT ---------- */
+.content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.content h1 {
+  font-size: 4rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #a1c4fd, #e0c3fc, #ff9966);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(160, 200, 255, 0.4);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { filter: drop-shadow(0 0 10px rgba(160, 200, 255, 0.4)); }
+  to   { filter: drop-shadow(0 0 30px rgba(224, 195, 252, 0.8)); }
+}
+
+.content p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #cdd6f4;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.explore-btn {
+  margin-top: 35px;
+  padding: 14px 38px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  background: linear-gradient(135deg, #3a5aef, #8e44ad);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(142, 68, 173, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 35px rgba(160, 100, 255, 0.9);
+}
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+.about {
+  background: linear-gradient(180deg, #000000, #0d1b2a);
+  color: #cdd6f4;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.about-inner {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.about p {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #b8c4dd;
+}
+
+/* =========================================================
+   FEATURES SECTION
+========================================================= */
+.features {
+  background: #05060a;
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 35px 20px;
+  color: #cdd6f4;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(120, 100, 255, 0.25);
+  border-color: rgba(160, 200, 255, 0.4);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #a9b6d1;
+}
+
+.feature-card code {
+  background: rgba(255,255,255,0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 600px) {
+  .content h1 { font-size: 2.2rem; }
+  .content p  { font-size: 0.95rem; }
+  .about h2, .features h2 { font-size: 1.6rem; }
+}
